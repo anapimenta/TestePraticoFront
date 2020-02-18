@@ -1,37 +1,45 @@
 function novosInputs(qtd){
 
-    let $somaConainer = $("#somaContainer").empty(); 
+    let $somaContainer = $("#somaContainer").empty(); 
 
 
     for (let i = 0; i < qtd; i++) {
 
-        $somaConainer.append(
+        $somaContainer.append(
             '<input type="number" class="inputSoma"> '
         )
 
     }
 
-    $somaConainer.append(
+    $somaContainer.append(
         '<p id="mostraResultado"><a href="#resultado" rel="modal:open">Open Modal</a></p>'
     )
     
-    $("#mostraResultado").click(somaInputs);
-    //adiciona função somaInputs ao click 
+    $("#mostraResultado").click(function(){
+        console.log("click");
+        calculaResultado();
+    });
+    //adiciona  função somaInputs ao click 
 }
 
-function somaInputs(){
+function calculaResultado(){
 
     let $inputs = $(".inputSoma");
   
-    $inputs.each(campoVazio(element));
+    // $inputs.each(campoVazio(this));
      
     let total = 0;
 
-    $inputs.each(function(element){
+    $inputs.each(function(){
 
-       total+= parseInt($(element).val());
+        console.log(
+            $(this).val(), total
+        )
+       total+= parseInt($(this).val());
      });
-    //modalResultado 
+
+    //Adiciona resultado no modal
+    $("#resultado").html("<p> Resultado da Soma:" + total + "</p>")
 
 }
 
@@ -40,14 +48,10 @@ function campoVazio(el){
     //lança exceção e mensagem 
 } 
 
-function modalResultado(){
-    //cria um modal com o resultado 
-}
-
 
 let $inputQuantidade = $("#inputQuantidade");
 
-let $btnQuantidade = $("btnQuantidade")
+let $btnQuantidade = $("#btnQuantidade")
 .click(function(){
 
     campoVazio($inputQuantidade);
