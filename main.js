@@ -1,13 +1,22 @@
 function novosInputs(qtd){
-    //seleciona area que serão adicionados os inputs 
-    //limpa oq ja tiver la 
+
+    let $somaConainer = $("#somaContainer").empty(); 
+
 
     for (let i = 0; i < qtd; i++) {
-        //area.append input .inputSoma
+
+        $somaConainer.append(
+            '<input type="number" class="inputSoma"> '
+        )
 
     }
-    //add botao de soma  
-    //adicionar função somaInputs ao click 
+
+    $somaConainer.append(
+        '<p id="mostraResultado"><a href="#resultado" rel="modal:open">Open Modal</a></p>'
+    )
+    
+    $("#mostraResultado").click(somaInputs);
+    //adiciona função somaInputs ao click 
 }
 
 function somaInputs(){
