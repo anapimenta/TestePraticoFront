@@ -12,42 +12,63 @@ function novosInputs(qtd){
     }
 
     $somaContainer.append(
-        '<p id="mostraResultado"><a href="#resultado" rel="modal:open">Open Modal</a></p>'
+ 
+        '<button id="btnResultado">Resultado</button>'
     )
     
-    $("#mostraResultado").click(function(){
-        console.log("click");
-        calculaResultado();
+    $("#btnResultado").click(function(){
+
+        let $inputs = $(".inputSoma");
+    
+       $inputs.each(function(){
+           campoVazio($(this));
+       });
+
+        calculaResultado($inputs);
     });
-    //adiciona  função somaInputs ao click 
 }
 
-function calculaResultado(){
-
-    let $inputs = $(".inputSoma");
-  
-    // $inputs.each(campoVazio(this));
+function calculaResultado(inputs){
      
     let total = 0;
 
-    $inputs.each(function(){
-
-        console.log(
-            $(this).val(), total
-        )
+    inputs.each(function(){
+        
        total+= parseInt($(this).val());
      });
+     console.log(total, "anaperfeita");
 
     //Adiciona resultado no modal
     $("#resultado").html("<p> Resultado da Soma:" + total + "</p>")
+    $("#mostraResultado").click();
 
 }
 
 function campoVazio(el){
-    //testa se o value é nulo 
-    //lança exceção e mensagem 
+ 
+    //lança exceção caso campo for vazio 
+    if(!el.val()){
+
+        $("#mostraErro").click();
+        
+        throw "Campo vazio";
+        
+    }
+    
 } 
 
+function campoInvalido(el){
+ 
+    //lança exceção caso campo for invalido
+    if(el.val() < 1){
+
+        $("#mostraErro").click();
+        
+        throw "Campo negativo";
+        
+    }
+    
+} 
 
 let $inputQuantidade = $("#inputQuantidade");
 
@@ -55,6 +76,7 @@ let $btnQuantidade = $("#btnQuantidade")
 .click(function(){
 
     campoVazio($inputQuantidade);
+    campoInvalido($inputQuantidade);
     //talvez colocar valor max 
     novosInputs($inputQuantidade.val());
 });
