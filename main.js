@@ -36,7 +36,7 @@ function calculaResultado(inputs){
         
        total+= parseInt($(this).val());
      });
-     console.log(total, "anaperfeita");
+     
 
     //Adiciona resultado no modal
     $("#resultado").html("<p> Resultado da Soma:" + total + "</p>")

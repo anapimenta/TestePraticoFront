@@ -1,3 +1,46 @@
 body{
     font-family: 'Nunito';
 }
+
+button, input {
+   
+    padding: .5rem 1rem;
+    display: inline-block; 
+    border: none;
+    transition-duration: .25s;
+    font-size: 14px;
+    font-family: 'Nunito';
+}
+
+button{
+    color: #fff;
+    background: #0a7aed;
+    border-radius: 4px;
+    
+}
+button:hover {
+    background: #22272a;
+}
+
+input{
+    width: 30px;
+    height: 30px;
+    border-bottom: 2px solid #0a7aed;
+}
+
+
+h1{
+    text-align: center;
+}
+
+#quantidadeContainer{
+
+}
+
+#somaContainer{
+
+}
+
+.inputSoma{
+    
+}
