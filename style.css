@@ -1,55 +1,52 @@
 body{
-    font-family: 'Nunito';
-    margin: 0;
-    padding: 10px 0 0 0;
+  font-family: 'Nunito';
+  margin: 0;
+  padding: 10px 0 0 0;
 }
 
 .wrapper {
-    padding: 2em 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    
-  }
+  padding: 2em 20px;
+  max-width: 900px;
+  margin: 0 auto;
+
+}
 
 button, input {
-   
-    padding: .5rem 1rem;
-    display: inline-block; 
-    border: none;
-    transition-duration: .25s;
-    font-size: 14px;
-    font-family: 'Nunito';
-    margin: 1rem;
+
+  padding: .5rem 1rem;
+  display: inline-block;
+  border: none;
+  transition-duration: .25s;
+  font-size: 14px;
+  font-family: 'Nunito';
+  margin: 1rem;
 }
 
 button{
-    color: #fff;
-    background: #0a7aed;
-    border-radius: 4px;
-    
+  color: #fff;
+  background: #0a7aed;
+  border-radius: 4px;
 }
+
 button:hover {
-    background: #22272a;
+  background: #22272a;
 }
 
 input{
-    
-    border-bottom: 2px solid #0a7aed;
-    width: 50px;
-}
-label{
-    display: inline-block;
+
+  border-bottom: 2px solid #0a7aed;
+  width: 50px;
 }
 
+label{
+  display: inline-block;
+}
 
 h1{
-    text-align: center;
+  text-align: center;
 }
 
 #quantidadeContainer, #somaContainer{
-    text-align: center; 
-    margin-bottom: 10%;
+  text-align: center;
+  margin-bottom: 10%;
 }
-
-
-
