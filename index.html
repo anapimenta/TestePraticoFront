@@ -12,26 +12,30 @@
 </head>
 
 <body>
-    <h1>Coloque abaixo, quantos campos de soma serão necessários, e então, descubra o resultado.</h1>
+    <div class="wrapper">
 
-    <div id="quantidadeContainer">   
-        <input type="number" id="inputQuantidade">
-        <button id="btnQuantidade">Adicionar Inputs</button>
+        <h1>Coloque abaixo, quantos campos de soma serão necessários, e então, descubra o resultado.</h1>
+
+        <div id="quantidadeContainer">   
+            <label for="inputQuantidade">Quantidade: </label>
+            <input type="number" id="inputQuantidade">
+            <button id="btnQuantidade">Adicionar Inputs</button>
+        </div>
+
+        <div id="somaContainer"> <!-- inputs de soma localizados aqui--> </div>
+
     </div>
 
-    <div id="somaContainer"> <!-- inputs de soma localizados aqui--> </div>
 
     <!-- modal de resultado-->
     <div id="resultado" class="modal"></div>
     <a href="#resultado" rel="modal:open" id="mostraResultado"></a>
-
 
     <!-- modal de erro -->
     <div id="erro" class="modal">
         <p>Não é possível efetuar a soma, preencha todos os campos corretamente</p>
     </div>
     <a href="#erro" rel="modal:open" id="mostraErro"></a>
-
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
